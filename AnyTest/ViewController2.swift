@@ -15,7 +15,7 @@ class ViewController2: UIViewController {
         view.backgroundColor = .white
         view.addSubview(label)
         label.textColor = .black
-        label.text = "第一次"
+        label.text = "第二次"
         label.font = UIFont.systemFont(ofSize: 25)
         label.backgroundColor = .green
     }
