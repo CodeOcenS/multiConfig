@@ -1,0 +1,13 @@
+//
+//  Config.release.xcconfig
+//  AnyTest
+//
+//  Created by PandaEye on 2022/4/14.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "Config.base.xcconfig"
+#include "Pods/Target Support Files/Pods-AnyTest/Pods-AnyTest.release.xcconfig"
+// 其他 key 使用 base
+HOST_URL = www.release.com

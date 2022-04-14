@@ -6,33 +6,30 @@
 //
 
 import UIKit
-import Inject
 
 class ViewController: UIViewController {
-    let manager = AnyManager.shared
-    var router: String {
-        return "/userInfo/me"
-    }
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        //testManager()
+        //print(setupHostByMacros())
+        print("info.plist url:\(readHostURL())")
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        testManager()
+       
     }
-    func testManager() {
-        manager.didChangeState = {
-            state in
-            print("ViewController 改变了状态")
+    
+    func readHostURL() -> String? {
+        guard let path = Bundle.main.path(forResource: "Info", ofType: "plist") else {
+            return nil
         }
-        manager.changeState()
+        let infoDic = NSDictionary(contentsOfFile: path)
+        let host = infoDic?["Host_URL"] as? String
+        return host
     }
     
     @IBAction func tapButton(_ sender: UIButton) {
-        let viewController = Inject.ViewControllerHost(ViewController2())
-        self.navigationController?.pushViewController(viewController, animated: true)
+
     }
     
 }

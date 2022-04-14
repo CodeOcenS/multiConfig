@@ -1,0 +1,17 @@
+//
+//  Config.debug.xcconfig
+//  AnyTest
+//
+//  Created by PandaEye on 2022/4/14.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "Config.base.xcconfig"
+#include "Pods/Target Support Files/Pods-AnyTest/Pods-AnyTest.debug.xcconfig"
+
+APP_NAME = ${inherited}Debug
+APP_ICON = ${inherited}Debug // AppIconDebug
+BUNDLE_ID = ${inherited}.Debug
+
+HOST_URL = www.debug.com
